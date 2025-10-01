@@ -1,0 +1,2 @@
+set(grasp_detection_MESSAGE_FILES "/ws/src/RoboCodeX_code/grasp_detection/msg/BoundingBox2D.msg;/ws/src/RoboCodeX_code/grasp_detection/msg/BoundingBox3D.msg;/ws/src/RoboCodeX_code/grasp_detection/msg/BoundingBox2DArray.msg;/ws/src/RoboCodeX_code/grasp_detection/msg/BoundingBox3DArray.msg;/ws/src/RoboCodeX_code/grasp_detection/msg/Grasp.msg;/ws/src/RoboCodeX_code/grasp_detection/msg/Perception.msg;/ws/src/RoboCodeX_code/grasp_detection/msg/PerceptionSingleCamera.msg")
+set(grasp_detection_SERVICE_FILES "/ws/src/RoboCodeX_code/grasp_detection/srv/DetectGrasps.srv")

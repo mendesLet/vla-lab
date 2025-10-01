@@ -1,0 +1,3 @@
+[submodule "catkin_ws/src/RoboCodeX_code"]
+	path = catkin_ws/src/RoboCodeX_code
+	url = https://github.com/RoboCodeX-source/RoboCodeX_code.git

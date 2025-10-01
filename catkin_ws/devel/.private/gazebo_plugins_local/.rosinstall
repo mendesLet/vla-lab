@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /ws/devel/.private/gazebo_plugins_local/setup.sh

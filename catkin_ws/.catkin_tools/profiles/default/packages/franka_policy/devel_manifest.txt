@@ -1,0 +1,4 @@
+RoboCodeX_code/franka_policy
+/ws/devel/.private/franka_policy/share/franka_policy/cmake/franka_policyConfig.cmake /ws/devel/share/franka_policy/cmake/franka_policyConfig.cmake
+/ws/devel/.private/franka_policy/share/franka_policy/cmake/franka_policyConfig-version.cmake /ws/devel/share/franka_policy/cmake/franka_policyConfig-version.cmake
+/ws/devel/.private/franka_policy/lib/pkgconfig/franka_policy.pc /ws/devel/lib/pkgconfig/franka_policy.pc

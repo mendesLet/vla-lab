@@ -1,0 +1,1 @@
+/ws/devel/.private/grasp_detection/share/roseus/ros/grasp_detection/manifest.l

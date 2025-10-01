@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /ws/devel/.private/instruct_to_policy/setup.sh

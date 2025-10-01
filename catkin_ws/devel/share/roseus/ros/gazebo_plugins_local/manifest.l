@@ -1,0 +1,1 @@
+/ws/devel/.private/gazebo_plugins_local/share/roseus/ros/gazebo_plugins_local/manifest.l

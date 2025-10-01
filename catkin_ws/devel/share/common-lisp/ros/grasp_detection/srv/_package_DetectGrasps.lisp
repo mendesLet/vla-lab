@@ -1,0 +1,1 @@
+/ws/devel/.private/grasp_detection/share/common-lisp/ros/grasp_detection/srv/_package_DetectGrasps.lisp

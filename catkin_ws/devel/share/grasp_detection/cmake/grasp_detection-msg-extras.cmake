@@ -1,0 +1,1 @@
+/ws/devel/.private/grasp_detection/share/grasp_detection/cmake/grasp_detection-msg-extras.cmake

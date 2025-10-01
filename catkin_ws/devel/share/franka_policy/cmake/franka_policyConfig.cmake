@@ -1,0 +1,1 @@
+/ws/devel/.private/franka_policy/share/franka_policy/cmake/franka_policyConfig.cmake

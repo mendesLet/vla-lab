@@ -1,0 +1,4 @@
+RoboCodeX_code/instruct_to_policy
+/ws/devel/.private/instruct_to_policy/share/instruct_to_policy/cmake/instruct_to_policyConfig.cmake /ws/devel/share/instruct_to_policy/cmake/instruct_to_policyConfig.cmake
+/ws/devel/.private/instruct_to_policy/share/instruct_to_policy/cmake/instruct_to_policyConfig-version.cmake /ws/devel/share/instruct_to_policy/cmake/instruct_to_policyConfig-version.cmake
+/ws/devel/.private/instruct_to_policy/lib/pkgconfig/instruct_to_policy.pc /ws/devel/lib/pkgconfig/instruct_to_policy.pc

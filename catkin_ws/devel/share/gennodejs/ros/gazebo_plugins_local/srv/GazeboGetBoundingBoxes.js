@@ -1,0 +1,1 @@
+/ws/devel/.private/gazebo_plugins_local/share/gennodejs/ros/gazebo_plugins_local/srv/GazeboGetBoundingBoxes.js
