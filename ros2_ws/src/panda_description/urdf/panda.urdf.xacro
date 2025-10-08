@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+  <!-- Pull Panda from MoveIt resources (apt: ros-humble-moveit-resources-panda-description) -->
+  <xacro:include filename="$(find moveit_resources_panda_description)/urdf/panda.urdf.xacro"/>
+
+  <!-- ======== Arguments you can expose to launches ======== -->
+  <xacro:arg name="arm_id" default="panda"/>
+  <!-- Classic Gazebo plugins don't work in Gazebo Harmonic; keep off -->
+  <xacro:arg name="use_gazebo_classic_plugins" default="false"/>
+  <xacro:arg name="use_gt_planning_scene" default="false"/>
+  <xacro:arg name="use_gt_bounding_box" default="false"/>
+  <xacro:arg name="enable_gt_joint_axis" default="false"/>
+
+  <!-- ======== Instantiate the Panda robot ======== -->
+  <!-- The MoveIt resource provides the Panda macros; the minimal, robust form is: -->
+  <xacro:franka_robot arm_id="$(arg arm_id)"/>
+
+  <!-- If you ever need to override joint limits explicitly, you can pass them like this:
+  <xacro:franka_robot
+      arm_id="$(arg arm_id)"
+      joint_limits="${xacro.load_yaml('$(find moveit_resources_panda_description)/config/joint_limits.yaml')}"/>
+  -->
+
+  <!-- ======== (Optional) Classic Gazebo plugins — disabled by default ======== -->
+  <!-- These were designed for Gazebo Classic. Keep them off for ros_gz_sim/Harmonic. -->
+  <xacro:if value="$(arg use_gazebo_classic_plugins)">
+    <gazebo>
+      <xacro:if value="$(arg use_gt_planning_scene)">
+        <plugin filename="libgazebo_ros_moveit_planning_scene.so" name="gazebo_ros_moveit_planning_scene">
+          <topicName>/planning_scene</topicName>
+          <updatePeriod>3.0</updatePeriod>
+        </plugin>
+      </xacro:if>
+
+      <xacro:if value="$(arg use_gt_bounding_box)">
+        <plugin filename="libgazebo_ros_bbox_3d_plugin.so" name="gazebo_ros_bbox_3d_plugin">
+          <links_to_publish>
+            <link>cabinet::drawer0</link>
+            <link>cabinet::drawer1</link>
+            <link>cabinet::drawer2</link>
+            <link>cabinet::drawer3</link>
+            <link>cabinet::handle_0</link>
+            <link>cabinet::handle_1</link>
+            <link>cabinet::handle_2</link>
+            <link>cabinet::handle_3</link>
+          </links_to_publish>
+        </plugin>
+      </xacro:if>
+
+      <xacro:if value="$(arg enable_gt_joint_axis)">
+        <plugin filename="libgazebo_ros_joint_axis_service.so" name="gazebo_ros_joint_axis_service">
+          <NodeName>gazebo_ros_joint_axis_service</NodeName>
+        </plugin>
+      </xacro:if>
+    </gazebo>
+  </xacro:if>
+
+</robot>
