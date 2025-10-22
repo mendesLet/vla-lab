@@ -1,1 +1,0 @@
-/root/ros2_panda_ws/build/panda_gazebo/ament_cmake_environment_hooks/local_setup.sh

@@ -1,0 +1,1 @@
+/opt/ws_panda/src/panda_description/cmake/environment_hooks/ign_gazebo_resource_path.bash

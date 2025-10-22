@@ -1,1 +1,1 @@
-/root/ros2_panda_ws/build/panda_description/ament_cmake_environment_hooks/local_setup.zsh
+/opt/ws_panda/build/panda_description/ament_cmake_environment_hooks/local_setup.zsh

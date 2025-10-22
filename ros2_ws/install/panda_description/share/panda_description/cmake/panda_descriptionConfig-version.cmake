@@ -1,1 +1,1 @@
-/root/ros2_panda_ws/build/panda_description/ament_cmake_core/panda_descriptionConfig-version.cmake
+/opt/ws_panda/build/panda_description/ament_cmake_core/panda_descriptionConfig-version.cmake

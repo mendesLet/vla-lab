@@ -1,0 +1,1 @@
+/opt/ws_panda/src/panda_moveit_config/launch/ex_ign_control.launch.py

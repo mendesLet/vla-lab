@@ -1,1 +1,0 @@
-/root/ros2_panda_ws/build/panda_bringup/launch/demo.launch.py

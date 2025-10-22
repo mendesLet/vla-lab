@@ -1,31 +1,56 @@
-FROM ros:humble
+# Base image stays the same
+FROM osrf/ros:humble-desktop
 
-# Locale setup
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
-    git wget curl vim build-essential \
-    python3-colcon-common-extensions \
-    python3-rosdep python3-vcstool \
-    ros-humble-gazebo-ros-pkgs \
+# Tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git curl gnupg lsb-release ca-certificates \
+    python3-rosdep python3-colcon-common-extensions \
+    build-essential locales && \
+    rm -rf /var/lib/apt/lists/*
+
+# Locale
+RUN locale-gen en_US en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+
+# MoveIt 2 for Humble
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-humble-moveit && \
+    rm -rf /var/lib/apt/lists/*
+
+# Gazebo Fortress + ROS integration (ros_gz). Avoid ros_ign shims.
+# This pulls Fortress from the ROS repository; no extra OSRF repo needed.
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-ros-gz \
-    ros-humble-moveit \
+    ros-humble-ros-gz-sim \
+    ros-humble-ros-gz-bridge && \
+    rm -rf /var/lib/apt/lists/*
+
+# ros2_control stack
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-ros2-control \
     ros-humble-ros2-controllers \
-    && rm -rf /var/lib/apt/lists/*
+    ros-humble-joint-state-publisher-gui && \
+    rm -rf /var/lib/apt/lists/*
 
-WORKDIR /root/ros2_panda_ws/src
+# Create workspace
+ENV WS=/opt/ws
+RUN mkdir -p $WS/src
+WORKDIR $WS
 
-RUN git clone https://github.com/ros-planning/panda_moveit_config.git
-RUN git clone https://github.com/frankaemika/franka_description.git
+# SHELL for sourcing
+SHELL ["/bin/bash", "-lc"]
 
-WORKDIR /root/ros2_panda_ws
-RUN colcon build
+# rosdep + build
+RUN set -eux; \
+    rosdep init 2>/dev/null || true; \
+    rosdep update; \
+    apt-get update; \
+    rosdep install -r --from-paths src --ignore-src --rosdistro humble -y; \
+    # disable nounset while sourcing ROS setup to avoid unbound variable error in setup scripts
+    set +u; \
+    source /opt/ros/humble/setup.bash; \
+    set -u; \
+    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
-ENV ROS_DISTRO=humble
-ENV ROS_WS=/root/ros2_panda_ws
-RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
-RUN echo "source ${ROS_WS}/install/setup.bash" >> ~/.bashrc
-
-CMD ["/bin/bash"]
