@@ -1,1 +1,0 @@
-/opt/ws_panda/build/panda_env_cmd_interfaces/ament_cmake_core/panda_env_cmd_interfacesConfig.cmake

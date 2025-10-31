@@ -1,1 +1,0 @@
-/ws/devel/.private/grasp_detection/share/roseus/ros/grasp_detection/msg/BoundingBox3D.l

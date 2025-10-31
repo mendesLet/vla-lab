@@ -1,1 +1,0 @@
-/ws/devel/.private/gazebo_plugins_local/include/gazebo_plugins_local/GazeboGetJointsAxesRequest.h

@@ -1,1 +1,0 @@
-/ws/devel/.private/grasp_detection/share/gennodejs/ros/grasp_detection/msg/BoundingBox2D.js

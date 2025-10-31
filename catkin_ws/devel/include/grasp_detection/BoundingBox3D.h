@@ -1,1 +1,0 @@
-/ws/devel/.private/grasp_detection/include/grasp_detection/BoundingBox3D.h

@@ -1,1 +1,0 @@
-/opt/ws_panda/src/panda_description/cmake/environment_hooks/sdf_path.bash

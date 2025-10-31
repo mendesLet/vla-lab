@@ -1,4 +1,0 @@
-realsense-ros/realsense2_description
-/ws/devel/.private/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig-version.cmake /ws/devel/share/realsense2_description/cmake/realsense2_descriptionConfig-version.cmake
-/ws/devel/.private/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig.cmake /ws/devel/share/realsense2_description/cmake/realsense2_descriptionConfig.cmake
-/ws/devel/.private/realsense2_description/lib/pkgconfig/realsense2_description.pc /ws/devel/lib/pkgconfig/realsense2_description.pc

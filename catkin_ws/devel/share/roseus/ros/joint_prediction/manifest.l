@@ -1,1 +1,0 @@
-/ws/devel/.private/joint_prediction/share/roseus/ros/joint_prediction/manifest.l

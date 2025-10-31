@@ -1,1 +1,0 @@
-/opt/ws_panda/build/panda_env_cmd_interfaces/rosidl_typesupport_introspection_c/panda_env_cmd_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h

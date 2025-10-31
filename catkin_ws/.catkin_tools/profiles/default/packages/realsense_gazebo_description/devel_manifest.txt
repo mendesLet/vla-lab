@@ -1,4 +1,0 @@
-realsense_gazebo_description
-/ws/devel/.private/realsense_gazebo_description/share/realsense_gazebo_description/cmake/realsense_gazebo_descriptionConfig.cmake /ws/devel/share/realsense_gazebo_description/cmake/realsense_gazebo_descriptionConfig.cmake
-/ws/devel/.private/realsense_gazebo_description/share/realsense_gazebo_description/cmake/realsense_gazebo_descriptionConfig-version.cmake /ws/devel/share/realsense_gazebo_description/cmake/realsense_gazebo_descriptionConfig-version.cmake
-/ws/devel/.private/realsense_gazebo_description/lib/pkgconfig/realsense_gazebo_description.pc /ws/devel/lib/pkgconfig/realsense_gazebo_description.pc

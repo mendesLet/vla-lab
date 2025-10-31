@@ -1,1 +1,0 @@
-/ws/devel/.private/joint_prediction/share/common-lisp/ros/joint_prediction/msg/joint_prediction-msg.asd

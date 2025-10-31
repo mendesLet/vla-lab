@@ -1,1 +1,0 @@
-/opt/ws_panda/src/panda_description/launch/view_ign.launch.py

@@ -1,1 +1,0 @@
-/opt/ws_panda/build/panda/ament_cmake_core/pandaConfig.cmake

@@ -1,1 +1,0 @@
-/ws/devel/.private/gazebo_plugins_local/share/common-lisp/ros/gazebo_plugins_local/srv/GazeboGetJointsAxes.lisp

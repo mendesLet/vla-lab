@@ -1,1 +1,0 @@
-/opt/ws_panda/src/panda_moveit_config/launch/move_group.launch.py

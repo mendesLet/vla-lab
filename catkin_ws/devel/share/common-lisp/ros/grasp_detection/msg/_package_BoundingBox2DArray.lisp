@@ -1,1 +1,0 @@
-/ws/devel/.private/grasp_detection/share/common-lisp/ros/grasp_detection/msg/_package_BoundingBox2DArray.lisp

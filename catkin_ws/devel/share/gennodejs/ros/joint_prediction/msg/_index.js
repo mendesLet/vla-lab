@@ -1,1 +1,0 @@
-/ws/devel/.private/joint_prediction/share/gennodejs/ros/joint_prediction/msg/_index.js
