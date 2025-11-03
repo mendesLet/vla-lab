@@ -1,0 +1,10 @@
+# numpy
+# astunparse
+# scipy
+# shapely
+# pygments
+# openai
+# open3d
+# imageio
+# imageio-ffmpeg
+# moviepy
