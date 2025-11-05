@@ -1,0 +1,29 @@
+services:
+
+    llm_service:
+        container_name: llm_service
+        image: llm_service:latest
+        environment:
+            - OPENAI_API_KEY=${OPENAI_API_KEY}
+        ports:
+            - "8000:8000"
+
+    panda_ros2:
+        container_name: panda_ros2
+        image: panda_ros2_gazebo:v0.5
+        privileged: true
+        ipc: host
+        shm_size: "2g"
+        working_dir: /root/workspace
+        network_mode: "host"
+        environment:
+            - DISPLAY=${DISPLAY}
+            - OPENAI_PROXY_URL=http://127.0.0.1:8000
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix:rw
+            - ../ros_packages:/root/workspace/src
+        runtime: nvidia
+        stdin_open: true
+        tty: true
+        depends_on:
+            - llm_service
