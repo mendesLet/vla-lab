@@ -30,7 +30,11 @@ This is heavly inspired by the work of [RoboCodeX](https://github.com/RoboCodeX-
 
 Docker development
 ```bash
+git submodule update --init --recursive
 docker build -f docker/Dockerfile -t panda_ros2_gazebo:v0.1
+# If you want with the LLM part
+docker compose -f docker/docker-compose.yaml --env-file docker/.env --project-name vla up -d
+# If you want only the ros2 container
 chmod +x ./run.sh
 ./run.sh
 ```
@@ -45,7 +49,7 @@ Colcon Build (inside docker)
 ```bash
 source /opt/ros/${ROS2_DISTRO}/setup.bash
 export COLCON_PYTHON_EXECUTABLE=/usr/bin/python3.8
-colcon build --merge-install --cmake-args -DIDYNTREE_USES_PYTHON=True -DPYTHON_EXECUTABLE=/usr/bin/python3.8 -DIDYNTREE_USES_IPOPT:BOOL=ON -DCMAKE_BUILD_TYPE=Release
+colcon build --merge-install --cmake-args --symlink-install -DIDYNTREE_USES_PYTHON=True -DPYTHON_EXECUTABLE=/usr/bin/python3.8 -DIDYNTREE_USES_IPOPT:BOOL=ON -DCMAKE_BUILD_TYPE=Release
 ```
 
 ## Configuration
@@ -54,6 +58,32 @@ Create a `.env` file in the root directory with the following structure:
 ```plaintext
 OPENAI_API_KEY=<your_key>
 ```
+
+## How to run
+
+First terminal run the gazebo launch and the task library node:
+```bash
+ros2 launch panda_ros2_gazebo gazebo.launch.py & ros2 launch panda_ros2_gazebo bringup.launch.py mode:=tasklibrary & wait
+```
+
+On a second terminal, run the NL Command Bridge that will allow to send requests to a LLM
+```bash
+ros2 run nl_command_bridge node
+```
+
+Finnaly, you can send a command publishing in the topic
+```bash
+ros2 topic pub /nl_command std_msgs/String "data: 'Create a stack of 3 boxes'"
+```
+
+Some other options can be:
+```bash
+ros2 topic pub /manip_task/cmd std_msgs/String "data: 'HOME'"
+ros2 topic pub /manip_task/cmd std_msgs/String "data: 'GO 0.55 0.10 0.30 0 90 0'"
+ros2 topic pub /manip_task/cmd std_msgs/String "data: 'PICK 0.55 0.00 0.00 0.05'"
+ros2 topic pub /manip_task/cmd std_msgs/String "data: 'PLACE 0.30 0.50 0.00 0.05'"
+```
+
 
 ## Architecture overview
 ```mermaid
