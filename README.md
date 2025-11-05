@@ -16,6 +16,7 @@ This is heavly inspired by the work of [RoboCodeX](https://github.com/RoboCodeX-
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Configuration](#configuration)
+- [How to Run](#how-to-run)
 - [Architecture overview](#architecture-overview)
 
 
