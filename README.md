@@ -50,7 +50,7 @@ Colcon Build (inside docker)
 ```bash
 source /opt/ros/${ROS2_DISTRO}/setup.bash
 export COLCON_PYTHON_EXECUTABLE=/usr/bin/python3.8
-colcon build --merge-install --cmake-args --symlink-install -DIDYNTREE_USES_PYTHON=True -DPYTHON_EXECUTABLE=/usr/bin/python3.8 -DIDYNTREE_USES_IPOPT:BOOL=ON -DCMAKE_BUILD_TYPE=Release
+colcon build --merge-install --symlink-install --cmake-args -DIDYNTREE_USES_PYTHON=True -DPYTHON_EXECUTABLE=/usr/bin/python3.8 -DIDYNTREE_USES_IPOPT:BOOL=ON -DCMAKE_BUILD_TYPE=Release
 ```
 
 ## Configuration
