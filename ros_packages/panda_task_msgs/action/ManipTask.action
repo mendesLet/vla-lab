@@ -1,0 +1,8 @@
+# Goal
+string command   # e.g., "GO 0.4 0.0 0.3 0 90 0" or "PICK 0.3 0.1 0.0 0.05"
+---
+# Result
+string result    # "Done: <cmd>" or "Aborted: <reason>"
+---
+# Feedback
+string status    # "Queued ...", "Doing ...", "Done ..."
